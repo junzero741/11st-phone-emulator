@@ -20,6 +20,19 @@ header {
   justify-content: space-between;
 }
 
+.app__box {
+  border: none;
+  cursor: move;
+}
+
+.app__box.over {
+  border: 3px dotted #666;
+}
+
+.app__box.moving {
+  opacity: 0.4;
+}
+
 .app__icon {
   display:block;
   width: 5em;
@@ -28,6 +41,7 @@ header {
   line-height: 5em;
   border-radius: 25px;
   background-color: #f0f0f0;
+ 
 }
 
 .nav__link {
@@ -39,14 +53,3 @@ header {
   border-radius: 5px;
   text-align: center;
 }
-
-
-
-.nav__link:hover {
-  
-}
-
-#app {
- 
-}
-

@@ -6,6 +6,8 @@ import MemoView from './src/ts/views/MemoView';
 import PhotoView from './src/ts/views/PhotoView';
 import getDate from './src/ts/utils/getDate';
 
+import dnd from './src/ts/utils/dnd';
+
 const navigateTo = (url) => {
   history.pushState(null, null, url);
   router();
@@ -40,6 +42,10 @@ const router = async () => {
 
   // app 에 html 렌더링
   document.querySelector('#app').innerHTML = view.getHtml();
+
+  // 홈화면 앱 드래그 앤 드롭
+  dnd(location.pathname);
+
   const clockRender = () => {
     document.querySelector('.clock').innerHTML = getDate();
   };
@@ -52,7 +58,7 @@ const router = async () => {
 // 뒤로가기
 window.addEventListener('popstate', router);
 
-// 라우트 이동 이벤트 위임
+// 페이지 init
 document.addEventListener('DOMContentLoaded', () => {
   document.body.addEventListener('click', (e: any) => {
     if (e.target.matches('[data-link]')) {
