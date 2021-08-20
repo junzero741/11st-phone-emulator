@@ -1,0 +1,52 @@
+body {
+  font-size: 16px;
+  color: #f0f0f0;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  background-color: #406acc;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.apps__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app__icon {
+  display:block;
+  width: 5em;
+  height: 5em;
+  text-align: center;
+  line-height: 5em;
+  border-radius: 25px;
+  background-color: #f0f0f0;
+}
+
+.nav__link {
+  display: block;
+  width: 3em;
+  height: 1.5em;
+  color: #5cbce9;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+
+.nav__link:hover {
+  
+}
+
+#app {
+ 
+}
+

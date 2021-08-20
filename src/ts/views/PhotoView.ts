@@ -7,8 +7,12 @@ export default class extends AbstractView {
 
   async getHtml() {
     return `
-      <header>${new Date()}</header>
-      <a href="/" class="nav__link" data-link>Back</a>
+      <header>
+        <a href="/" class="nav__link" data-link>
+          Back
+        </a>
+        <span>${new Date()}</span>
+      </header>
       <p>
           사진 모음
       </p>
