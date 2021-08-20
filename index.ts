@@ -4,6 +4,7 @@ import HomeView from './src/ts/views/HomeView';
 import AlarmView from './src/ts/views/AlarmView';
 import MemoView from './src/ts/views/MemoView';
 import PhotoView from './src/ts/views/PhotoView';
+import getDate from './src/ts/utils/getDate';
 
 const navigateTo = (url) => {
   history.pushState(null, null, url);
@@ -38,7 +39,14 @@ const router = async () => {
   const view = new match.route.view();
 
   // app 에 html 렌더링
-  document.querySelector('#app').innerHTML = await view.getHtml();
+  document.querySelector('#app').innerHTML = view.getHtml();
+  const clockRender = () => {
+    document.querySelector('.clock').innerHTML = getDate();
+  };
+
+  // 시계 렌더링
+  clockRender();
+  setInterval(clockRender, 1000);
 };
 
 // 뒤로가기
