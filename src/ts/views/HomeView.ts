@@ -10,9 +10,9 @@ export default class extends AbstractView {
     return `
     <header><span class="clock"></span></header>
     <main class = "apps__container">
-    <a href="/alarms" class="app__icon" data-link>Alarms</a>
-    <a href="/memos" class="app__icon" data-link>Memos</a>
-    <a href="/photos" class="app__icon" data-link>Photos</a>
+    <a href="/alarms" class="app__icon" data-link>알람</a>
+    <a href="/memos" class="app__icon" data-link>메모</a>
+    <a href="/photos" class="app__icon" data-link>포토</a>
     </main>
     `;
   }
