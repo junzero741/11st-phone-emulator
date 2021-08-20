@@ -1,7 +1,7 @@
 export default class {
   constructor() {}
 
-  getHtml() {
+  getHtml(): string {
     return '';
   }
 }
