@@ -1,13 +1,14 @@
 import AbstractView from './AbstractView';
+import getDate from '../utils/getDate';
 
 export default class extends AbstractView {
   constructor() {
     super();
   }
 
-  async getHtml() {
+  getHtml() {
     return `
-    <header>${new Date()}</header>
+    <header><span class="clock"></span></header>
     <main class = "apps__container">
     <a href="/alarms" class="app__icon" data-link>Alarms</a>
     <a href="/memos" class="app__icon" data-link>Memos</a>

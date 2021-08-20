@@ -5,13 +5,13 @@ export default class extends AbstractView {
     super();
   }
 
-  async getHtml() {
+  getHtml() {
     return `
       <header>
         <a href="/" class="nav__link" data-link>
           Back
         </a>
-        <span>${new Date()}</span>
+        <span class="clock"></span>
       </header>
       <p>
           사진 모음

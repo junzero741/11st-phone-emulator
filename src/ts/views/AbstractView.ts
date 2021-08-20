@@ -1,7 +1,7 @@
 export default class {
   constructor() {}
 
-  async getHtml() {
+  getHtml() {
     return '';
   }
 }
