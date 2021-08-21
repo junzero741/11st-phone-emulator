@@ -13,8 +13,11 @@ import getDate from './src/ts/utils/getDate';
 
 const navigateTo = (url) => {
   history.pushState(null, null, url);
+  clearInterval(timer);
   router();
 };
+
+let timer;
 
 const router = async () => {
   const routes = [
@@ -58,7 +61,7 @@ const router = async () => {
     document.querySelector('.clock').innerHTML = getDate();
   };
   renderClock();
-  setInterval(renderClock, 1000);
+  timer = setInterval(renderClock, 1000);
 };
 
 // 뒤로가기
