@@ -10,17 +10,21 @@ import memo from './src/ts/models/memo';
 import alarm from './src/ts/models/alarm';
 
 import getDate from './src/ts/utils/getDate';
+import checkAlarm from './src/ts/utils/checkAlarm';
+
+let timer;
+let alarmChecker;
 
 const navigateTo = (url) => {
   history.pushState(null, null, url);
   clearInterval(timer);
+  clearInterval(alarmChecker);
   router();
 };
 
-let timer;
-
 const router = async () => {
   clearInterval(timer);
+  clearInterval(alarmChecker);
   const routes = [
     { path: '/', view: HomeView },
     { path: '/alarms', view: AlarmView },
@@ -62,6 +66,9 @@ const router = async () => {
     document.querySelector('.clock').innerHTML = getDate();
   };
   renderClock();
+
+  // 1초마다 실행되는 알람체커와 시계
+  alarmChecker = setInterval(checkAlarm, 1000);
   timer = setInterval(renderClock, 1000);
 };
 

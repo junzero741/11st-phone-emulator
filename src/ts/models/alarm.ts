@@ -16,12 +16,13 @@ const alarm = () => {
 
   const getSavedAlarms = () => {
     if (localStorage.getItem('alarm')) {
-      alarmList.innerHTML = JSON.parse(localStorage.getItem('alarm'));
+      if (!alarmList) return;
+      alarmList.innerHTML = JSON.parse(localStorage.getItem('alarm')); //error
     }
   };
 
   const finishAlarmInput = () => {
-    alarmForm.addEventListener('submit', (e: MouseEvent) => {
+    alarmForm?.addEventListener('submit', (e: MouseEvent) => {
       e.preventDefault();
       const ampm = alarmInputAmPm.options[alarmInputAmPm.selectedIndex].text;
       const hours = alarmInputHours.value;
@@ -32,25 +33,20 @@ const alarm = () => {
       li.innerHTML = `<div class ="alarm__item__content"><span class="alarm__item__content__time">${ampm} ${hours}시 ${minutes}분</span><button class="alarm__item__content__delete">삭제</button></div>`;
 
       alarmList.appendChild(li);
-      // console.log('inside ul:', alarmList.innerHTML);
       saveCurrentAlarms();
       alarmForm.classList.add('hide');
     });
   };
 
   const saveCurrentAlarms = () => {
-    alarmList.childNodes.forEach((el: HTMLElement) => {
-      if (el.innerText) console.log(el);
-    });
     localStorage.setItem('alarm', JSON.stringify(alarmList.innerHTML));
   };
 
   const deleteAlarm = () => {
-    alarmList.addEventListener('click', (e: HTMLElementEvent<HTMLUListElement>) => {
+    alarmList?.addEventListener('click', (e: HTMLElementEvent<HTMLUListElement>) => {
       const deleteBtn = e.target.closest('button');
-      const alarmItem = deleteBtn.parentNode.parentNode;
-      alarmItem.parentNode.removeChild(alarmItem);
-      console.log('inside ul:', alarmList.innerHTML);
+      const alarmItem = deleteBtn?.parentNode?.parentNode;
+      alarmItem?.parentNode.removeChild(alarmItem);
       saveCurrentAlarms();
     });
   };
