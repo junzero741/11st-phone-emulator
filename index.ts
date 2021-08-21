@@ -20,6 +20,7 @@ const navigateTo = (url) => {
 let timer;
 
 const router = async () => {
+  clearInterval(timer);
   const routes = [
     { path: '/', view: HomeView },
     { path: '/alarms', view: AlarmView },
