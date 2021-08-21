@@ -1,3 +1,7 @@
+* {
+  padding: 0;
+}
+
 body {
   font-size: 16px;
   color: #f0f0f0;
@@ -6,13 +10,27 @@ body {
   background-color: #406acc;
 }
 
+ul, li {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
+}
+
+p {
+  height: 100%;
+  margin: 0;
 }
 
 header {
   display: flex;
   justify-content: space-between;
+}
+
+
+.hide {
+  display: none;
 }
 
 .apps__container {
@@ -52,4 +70,43 @@ header {
   background-color: #f0f0f0;
   border-radius: 5px;
   text-align: center;
+}
+
+.nav__link, .new__item {
+  display: block;
+  color: #5cbce9;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #5cbce9;
+}
+
+.memo__input {
+  width: -webkit-fill-available;
+}
+
+.memo__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+
+.memo__item {
+  color: #666;
+  background-color: #f0f0f0;
+  margin: 0.5em 0;
+}
+
+.memo__content {
+  height: 2.8em;
+  overflow: hidden;
+}
+
+
+.detailed {
+  display: block;
+  height : 100%;
+  border: 5px solid #eaee11;
 }

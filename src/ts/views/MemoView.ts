@@ -8,15 +8,17 @@ export default class extends AbstractView {
   getHtml() {
     return `
       <header>
-        <a href="/" class="nav__link" data-link>
-          Back
-        </a>
+        <a href="/" class="nav__link" data-link>BACK</a>
         <span class="clock"></span>
+        <button class="new__memo" >NEW</button>
       </header>
       
-      <p>
-          메모 모음
-      </p>
+      <main class= "memo__wrapper">
+          <input type="text" class="memo__input hide" />
+          <ul class = "memo__list">
+          
+          <ul>
+      </main>
     `;
   }
 }
