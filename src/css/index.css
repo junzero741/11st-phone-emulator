@@ -110,3 +110,24 @@ header {
   height : 100%;
   border: 5px solid #eaee11;
 }
+
+.alarm__item {
+  color: #666;
+  background-color: #f0f0f0;
+  margin: 0.5em 0;
+}
+
+.alarm__item__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.alarm__input__submit {
+  border: 1px solid #5cbce9;
+}
+
+.alarm__item__content__delete {
+  border: 1px solid #aa2222;
+  color: #aa2222;
+}
