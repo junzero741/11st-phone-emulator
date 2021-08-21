@@ -6,7 +6,8 @@ import MemoView from './src/ts/views/MemoView';
 import PhotoView from './src/ts/views/PhotoView';
 import getDate from './src/ts/utils/getDate';
 
-import dnd from './src/ts/utils/dnd';
+import dnd from './src/ts/models/dnd';
+import memo from './src/ts/models/memo';
 
 const navigateTo = (url) => {
   history.pushState(null, null, url);
@@ -43,16 +44,19 @@ const router = async () => {
   // app 에 html 렌더링
   document.querySelector('#app').innerHTML = view.getHtml();
 
-  // 홈화면 앱 드래그 앤 드롭
-  dnd(location.pathname);
+  // 페이지별 모델 분리
+  try {
+    distributeModel(location.pathname);
+  } catch (error) {
+    console.error(error);
+  }
 
-  const clockRender = () => {
+  // 모든 페이지에 시계 렌더링
+  const renderClock = () => {
     document.querySelector('.clock').innerHTML = getDate();
   };
-
-  // 시계 렌더링
-  clockRender();
-  setInterval(clockRender, 1000);
+  renderClock();
+  setInterval(renderClock, 1000);
 };
 
 // 뒤로가기
@@ -69,3 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   router();
 });
+
+const distributeModel = (pathname) => {
+  switch (pathname) {
+    case '/':
+      dnd();
+      break;
+    case '/memos':
+      memo();
+      break;
+    default:
+      throw Error(`unhandled pathname : ${pathname}`);
+  }
+};
