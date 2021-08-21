@@ -1,6 +1,4 @@
-export default function dnd(pathName) {
-  if (pathName !== '/') return;
-
+export default function dnd() {
   let dragSrcEl = null;
   let items = document.querySelectorAll('.apps__container .app__box');
 
