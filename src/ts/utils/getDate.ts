@@ -10,6 +10,8 @@ const getDate = (): string => {
   result += `${year}년 ${month}월 ${day}일 ${hours}시 ${minutes < 10 ? '0' + minutes : minutes}분 ${
     seconds < 10 ? '0' + seconds : seconds
   }초`;
+  // const alarmData = localStorage.getItem('alarm');
+  // console.log(JSON.parse(alarmData));
   return result;
 };
 

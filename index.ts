@@ -4,10 +4,12 @@ import HomeView from './src/ts/views/HomeView';
 import AlarmView from './src/ts/views/AlarmView';
 import MemoView from './src/ts/views/MemoView';
 import PhotoView from './src/ts/views/PhotoView';
-import getDate from './src/ts/utils/getDate';
 
 import dnd from './src/ts/models/dnd';
 import memo from './src/ts/models/memo';
+import alarm from './src/ts/models/alarm';
+
+import getDate from './src/ts/utils/getDate';
 
 const navigateTo = (url) => {
   history.pushState(null, null, url);
@@ -81,6 +83,9 @@ const distributeModel = (pathname) => {
       break;
     case '/memos':
       memo();
+      break;
+    case '/alarms':
+      alarm();
       break;
     default:
       throw Error(`unhandled pathname : ${pathname}`);
