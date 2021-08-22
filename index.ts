@@ -8,6 +8,7 @@ import PhotoView from './src/ts/views/PhotoView';
 import dnd from './src/ts/models/dnd';
 import memo from './src/ts/models/memo';
 import alarm from './src/ts/models/alarm';
+import photo from './src/ts/models/photo';
 
 import getDate from './src/ts/utils/getDate';
 import checkAlarm from './src/ts/utils/checkAlarm';
@@ -97,6 +98,9 @@ const distributeModel = (pathname) => {
       break;
     case '/alarms':
       alarm();
+      break;
+    case '/photos':
+      photo();
       break;
     default:
       throw Error(`unhandled pathname : ${pathname}`);

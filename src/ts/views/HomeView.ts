@@ -27,7 +27,7 @@ export default class extends AbstractView {
           <a href="/memos" class="app__icon" data-link>메모</a>
         </div>
         <div draggable = "true" class="app__box">
-          <a href="/photos" class="app__icon" data-link>포토</a>
+          <a href="/photos" class="app__icon" data-link>사진</a>
         </div>
       </main>
     </wrapper>
