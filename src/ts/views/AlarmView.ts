@@ -1,4 +1,5 @@
 import AbstractView from './AbstractView';
+require('../../css/alarm.css');
 
 export default class extends AbstractView {
   constructor() {

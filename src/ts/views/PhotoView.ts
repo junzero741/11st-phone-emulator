@@ -1,4 +1,5 @@
 import AbstractView from './AbstractView';
+require('../../css/photo.css');
 
 export default class extends AbstractView {
   constructor() {

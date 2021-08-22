@@ -26,7 +26,6 @@ p {
   margin: 0;
 }
 
-
 img {
   object-fit: scale-down;
 }
@@ -36,48 +35,9 @@ header {
   justify-content: space-between;
 }
 
-
-.hide {
-  display: none;
-}
-
-.apps__container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.app__box {
-  border: none;
-  cursor: move;
-}
-
-.app__box.over {
-  border: 3px dotted #666;
-}
-
-.app__box.moving {
-  opacity: 0.4;
-}
-
-.app__icon {
-  display:block;
-  width: 5em;
-  height: 5em;
-  text-align: center;
-  line-height: 5em;
-  border-radius: 25px;
-  background-color: #f0f0f0;
- 
-}
-
 .nav__link {
-  display: block;
   width: 3em;
   height: 1.5em;
-  color: #5cbce9;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  text-align: center;
 }
 
 .nav__link, .new__item {
@@ -89,103 +49,12 @@ header {
   border: 1px solid #5cbce9;
 }
 
-.memo__input {
-  width: -webkit-fill-available;
-}
 
-.memo__list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
+/* 탈부착용 클래스 */
+
+.hide {
+  display: none;
 }
 
 
-.memo__item {
-  color: #666;
-  background-color: #f0f0f0;
-  margin: 0.5em 0;
-}
 
-.memo__content {
-  height: 2.8em;
-  overflow: hidden;
-}
-
-
-.detailed {
-  display: block;
-  height : 100%;
-  border: 3px solid #e09e23;
-}
-
-.alarm__item {
-  color: #666;
-  background-color: #f0f0f0;
-  margin: 0.5em 0;
-}
-
-.alarm__item__content {
-  display: flex;
-  justify-content: space-between;
-}
-
-
-.alarm__input__submit {
-  border: 1px solid #5cbce9;
-}
-
-.alarm__item__content__delete {
-  border: 1px solid #aa2222;
-  color: #aa2222;
-}
-
-.nav__photo {
-  height: 10vh;
-}
-
-.photo__list {
-  display : flex;
-  overflow-x: scroll;
-  align-items: center;
-  height: 100%;
-}
-
-.photo__box {
-  margin: 0 2em;
-}
-
-
-.photo__thumbnail {
-  width: 3em;
-  height: 3em;
-  object-fit: cover;
-}
-
-
-.focused {
-  border: 3px solid #e09e23;
-}
-
-.photo__main {
-  background-color: #000;
-  position: absolute;
-  width: 100vw;
-  height: 90vh;
-  left: 0;
-}
-
-.photo__main__box {
-  width: 100vw;
-  height: 80vh;
-  display: flex;;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.photo__main__content {
-  width: 100vw;
-  height: 50vh;
-  object-fit: contain;
-}

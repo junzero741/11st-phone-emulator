@@ -1,0 +1,51 @@
+/* 사진 */
+
+.nav__photo {
+  height: 10vh;
+}
+
+.photo__list {
+  display : flex;
+  overflow-x: scroll;
+  align-items: center;
+  height: 100%;
+}
+
+.photo__box {
+  margin: 0 2em;
+}
+
+
+.photo__thumbnail {
+  width: 3em;
+  height: 3em;
+  object-fit: cover;
+}
+
+
+.photo__main {
+  background-color: #000;
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+  left: 0;
+}
+
+.photo__main__box {
+  width: 100vw;
+  height: 80vh;
+  display: flex;;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.photo__main__content {
+  width: 100vw;
+  height: 50vh;
+  object-fit: contain;
+}
+
+.focused {
+  border: 3px solid #e09e23;
+}
