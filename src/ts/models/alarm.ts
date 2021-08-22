@@ -14,7 +14,7 @@ const alarm = () => {
         alarmForm.classList.toggle('hide');
       });
     } catch (error) {
-      console.log('alarm removed');
+      console.error('alarm page is not rendered yet');
     }
   };
 
