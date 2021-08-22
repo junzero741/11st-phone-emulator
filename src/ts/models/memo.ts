@@ -16,6 +16,7 @@ const memo = () => {
 
       if (e.target.tagName === 'P') {
         e.target.classList.toggle('detailed');
+        e.target.classList.contains('detailed') && memoInput.classList.add('hide');
       }
     });
   };
