@@ -22,7 +22,7 @@ export default class extends AbstractView {
             <option value="pm">오후</option>
           </select>
           <input type="number" class= "alarm__input__hours" min="0" max="12" value="0"/>
-          <input type="number" class= "alarm__input__minutes" min="0"  max="59"  value="0"/>
+          <input type="number" class= "alarm__input__minutes" min="0"  max="70"  step = "10" value="0"/>
           <input type="submit" class= "alarm__input__submit" value = "저장"/> 
         </form>
         <ul class = "alarm__list"></ul>          

@@ -51,19 +51,28 @@ const alarm = () => {
   };
 
   // 삭제버튼을 클릭하면 해당 알람 삭제
-  const deleteAlarm = () => {
+  const onDeleteAlarm = () => {
     alarmList?.addEventListener('click', (e: HTMLElementEvent<HTMLUListElement>) => {
       const deleteBtn = e.target.closest('button');
-      const alarmItem = deleteBtn?.parentNode?.parentNode;
-      alarmItem?.parentNode.removeChild(alarmItem);
+      const alarmItem = deleteBtn?.parentNode?.parentNode; // should be ul
+      alarmItem?.parentNode.removeChild(alarmItem); // ul 에서 li 삭제
       saveCurrentAlarms();
+    });
+  };
+
+  // 10분 단위 입력받는 칸의 값이 60이면 0으로 초기화
+  const setAlarmMinuteValue = () => {
+    const input: HTMLInputElement = document.querySelector('.alarm__input__minutes');
+    input.addEventListener('change', () => {
+      input.value = Number(input.value) > 50 ? '0' : input.value;
     });
   };
 
   getSavedAlarms();
   addNewAlarm();
   finishAlarmInput();
-  deleteAlarm();
+  onDeleteAlarm();
+  setAlarmMinuteValue();
 };
 
 export default alarm;
