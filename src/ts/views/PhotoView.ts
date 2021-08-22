@@ -1,5 +1,4 @@
 import AbstractView from './AbstractView';
-import cat_1 from '../../images/cat_1.jpg';
 
 export default class extends AbstractView {
   constructor() {
@@ -14,13 +13,15 @@ export default class extends AbstractView {
         </a>
         <span class="clock"></span>
       </header>
-      <nav>
-        <ul>
-          <img src = ${cat_1} /> 
+      <nav class = "nav__photo">
+        <ul class = "photo__list">
+          
         </ul>
       </nav>
-      <main>
+      <main class="photo__main">
+        <div class="photo__main__box">
 
+        </div>
       </main>
     `;
   }

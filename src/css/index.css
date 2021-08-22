@@ -1,10 +1,12 @@
 * {
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-size: 16px;
   color: #f0f0f0;
+  padding: 8px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
   background-color: #406acc;
@@ -12,6 +14,7 @@ body {
 
 ul, li {
   list-style: none;
+  margin: 0;
 }
 
 a {
@@ -21,6 +24,11 @@ a {
 p {
   height: 100%;
   margin: 0;
+}
+
+
+img {
+  object-fit: scale-down;
 }
 
 header {
@@ -108,7 +116,7 @@ header {
 .detailed {
   display: block;
   height : 100%;
-  border: 5px solid #eaee11;
+  border: 3px solid #e09e23;
 }
 
 .alarm__item {
@@ -130,4 +138,54 @@ header {
 .alarm__item__content__delete {
   border: 1px solid #aa2222;
   color: #aa2222;
+}
+
+.nav__photo {
+  height: 10vh;
+}
+
+.photo__list {
+  display : flex;
+  overflow-x: scroll;
+  align-items: center;
+  height: 100%;
+}
+
+.photo__box {
+  margin: 0 2em;
+}
+
+
+.photo__thumbnail {
+  width: 3em;
+  height: 3em;
+  object-fit: cover;
+}
+
+
+.focused {
+  border: 3px solid #e09e23;
+}
+
+.photo__main {
+  background-color: #000;
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+  left: 0;
+}
+
+.photo__main__box {
+  width: 100vw;
+  height: 80vh;
+  display: flex;;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.photo__main__content {
+  width: 100vw;
+  height: 50vh;
+  object-fit: contain;
 }
