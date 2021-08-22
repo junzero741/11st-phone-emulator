@@ -63,8 +63,8 @@ const alarm = () => {
   // 10분 단위 입력받는 칸의 값이 60이면 0으로 초기화
   const setAlarmMinuteValue = () => {
     const input: HTMLInputElement = document.querySelector('.alarm__input__minutes');
-    input.addEventListener('change', () => {
-      input.value = Number(input.value) > 50 ? '0' : input.value;
+    input?.addEventListener('change', () => {
+      input.value = Number(input.value) > 59 ? '0' : input.value;
     });
   };
 

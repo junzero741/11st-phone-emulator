@@ -26,11 +26,11 @@ export default function dnd() {
     return false;
   }
 
-  function handleDragEnter(e) {
+  function handleDragEnter() {
     this.classList.add('over');
   }
 
-  function handleDragLeave(e) {
+  function handleDragLeave() {
     this.classList.remove('over');
   }
 
@@ -46,16 +46,16 @@ export default function dnd() {
       dragSrcEl.innerHTML = this.innerHTML;
       this.innerHTML = e.dataTransfer.getData('text/html');
     }
-    saveToLocal();
+    saveToLocal(); // 드래그 후 드랍할 때 상태 저장
     return false;
   }
 
-  function handleDragEnd(e) {
+  function handleDragEnd() {
     items.forEach((item) => {
       item.classList.remove('over');
       item.classList.remove('moving');
     });
-    saveToLocal();
+    saveToLocal(); // 드래그 끝날 때 상태 저장
   }
 
   function saveToLocal() {
