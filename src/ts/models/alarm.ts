@@ -9,9 +9,13 @@ const alarm = () => {
   const alarmList = document.querySelector('.alarm__list');
 
   const addNewAlarm = () => {
-    newAlarmBtn.addEventListener('click', () => {
-      alarmForm.classList.toggle('hide');
-    });
+    try {
+      newAlarmBtn.addEventListener('click', () => {
+        alarmForm.classList.toggle('hide');
+      });
+    } catch (error) {
+      console.log('alarm removed');
+    }
   };
 
   const getSavedAlarms = () => {
