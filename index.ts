@@ -13,8 +13,8 @@ import photo from './src/ts/models/photo';
 import getDate from './src/ts/utils/getDate';
 import checkAlarm from './src/ts/utils/checkAlarm';
 
-let timer;
-let alarmChecker;
+let timer: undefined | NodeJS.Timer;
+let alarmChecker: undefined | NodeJS.Timer;
 
 const router = async () => {
   clearInterval(timer);
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 페이지 이동 함수
-const navigateTo = (url) => {
+const navigateTo = (url: string) => {
   history.pushState(null, null, url);
   clearInterval(timer);
   clearInterval(alarmChecker);
@@ -85,7 +85,7 @@ const navigateTo = (url) => {
 };
 
 // 페이지별 모델 분리
-const distributeModel = (pathname) => {
+const distributeModel = (pathname: string) => {
   switch (pathname) {
     case '/':
       dnd();
