@@ -48,5 +48,14 @@
 ### 4. 알람
 ![데모_3_알람](https://user-images.githubusercontent.com/71166372/130389892-30e70089-dfdf-455c-887f-272cd8806c60.gif)
 
+---
+
+## 웹사이트 성능측정
+
+### 모바일
+<img width="1440" alt="라이트하우스_모바일" src="https://user-images.githubusercontent.com/71166372/130445448-6cb9d5e0-1ea9-40c0-9033-b4348b25b52a.png">
+
+### 데스크탑
+<img width="1440" alt="라이트하우스_데스크탑" src="https://user-images.githubusercontent.com/71166372/130445485-24f9b319-b6ab-4305-af2c-4b6fa1ac664c.png">
 
 
