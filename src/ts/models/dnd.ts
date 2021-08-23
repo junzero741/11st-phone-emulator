@@ -2,7 +2,7 @@ export default function dnd() {
   let dragSrcEl = null;
   let items = document.querySelectorAll('.apps__container .app__box');
 
-  items.forEach(function (item) {
+  items.forEach((item) => {
     item.addEventListener('dragstart', handleDragStart, false);
     item.addEventListener('dragover', handleDragOver, false);
     item.addEventListener('dragenter', handleDragEnter, false);
@@ -19,9 +19,7 @@ export default function dnd() {
   }
 
   function handleDragOver(e) {
-    if (e.preventDefault) {
-      e.preventDefault();
-    }
+    e.preventDefault && e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
     return false;
   }
@@ -35,15 +33,11 @@ export default function dnd() {
   }
 
   function handleDrop(e) {
-    if (e.stopPropagation) {
-      e.stopPropagation(); //  리다이렉트 방지
-    }
-    items.forEach((item) => {
-      item.classList.remove('over');
-      item.classList.remove('moving');
-    });
+    e.stopPropagation && e.stopPropagation(); //  리다이렉트 방지
+
+    removeClass();
     if (dragSrcEl != this) {
-      dragSrcEl.innerHTML = this.innerHTML;
+      dragSrcEl.innerHTML = this.innerHTML; // 드래그 중인 앱과 목적지의 앱 교체
       this.innerHTML = e.dataTransfer.getData('text/html');
     }
     saveToLocal(); // 드래그 후 드랍할 때 상태 저장
@@ -51,11 +45,15 @@ export default function dnd() {
   }
 
   function handleDragEnd() {
+    removeClass();
+    saveToLocal(); // 드래그 끝날 때 상태 저장
+  }
+
+  function removeClass() {
     items.forEach((item) => {
       item.classList.remove('over');
       item.classList.remove('moving');
     });
-    saveToLocal(); // 드래그 끝날 때 상태 저장
   }
 
   function saveToLocal() {
