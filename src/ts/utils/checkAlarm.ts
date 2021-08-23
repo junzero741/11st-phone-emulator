@@ -44,7 +44,7 @@ const parseTime = (time: string): number[] => {
   const ampm = tokens[0];
   let hours = cutStringFromTime(tokens[1]);
   let minutes = cutStringFromTime(tokens[2]);
-  if (ampm === '오후') hours += 12;
+  if (ampm === '오후' && hours !== 12) hours += 12;
   return [hours, minutes];
 };
 
