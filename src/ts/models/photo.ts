@@ -5,7 +5,7 @@ const photo = () => {
   const photoList = <HTMLUListElement>document.querySelector('.photo__list');
 
   // 이미지 파일 불러와서 섬네일 만들기
-  const makePhotoBoxWithThumbnail = (imageFile) => {
+  const makePhotoBoxWithThumbnail = (imageFile: string): HTMLLIElement => {
     const li = document.createElement('li');
     li.classList.add('photo__box');
     const img = document.createElement('img');
