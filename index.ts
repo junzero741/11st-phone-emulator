@@ -6,8 +6,8 @@ import MemoView from './src/ts/views/MemoView';
 import PhotoView from './src/ts/views/PhotoView';
 
 import dnd from './src/ts/models/dnd';
-import memo from './src/ts/models/memo';
 import alarm from './src/ts/models/alarm';
+import memo from './src/ts/models/memo';
 import photo from './src/ts/models/photo';
 
 import getDate from './src/ts/utils/getDate';
@@ -15,13 +15,6 @@ import checkAlarm from './src/ts/utils/checkAlarm';
 
 let timer;
 let alarmChecker;
-
-const navigateTo = (url) => {
-  history.pushState(null, null, url);
-  clearInterval(timer);
-  clearInterval(alarmChecker);
-  router();
-};
 
 const router = async () => {
   clearInterval(timer);
@@ -39,7 +32,6 @@ const router = async () => {
       isMatch: location.pathname === route.path,
     };
   });
-
   let match = potentialMatches.find((potentialMatch) => potentialMatch.isMatch);
 
   // 없는 url 입력할 시 홈화면으로 이동
@@ -50,10 +42,8 @@ const router = async () => {
     };
   }
 
-  const view = new match.route.view();
-
-  // app 에 html 렌더링
-  document.querySelector('#app').innerHTML = view.getHtml();
+  const view = new match.route.view(); // 라우트에 맞는 뷰 지정
+  document.querySelector('#app').innerHTML = view.getHtml(); // 지정된 뷰를 app에 렌더링
 
   // 페이지별 모델 분리
   try {
@@ -73,10 +63,9 @@ const router = async () => {
   timer = setInterval(renderClock, 1000);
 };
 
-// 뒤로가기
-window.addEventListener('popstate', router);
+window.addEventListener('popstate', router); // 뒤로가기
 
-// 페이지 init
+// 페이지 init 및 라우터 이벤트 부착
 document.addEventListener('DOMContentLoaded', () => {
   document.body.addEventListener('click', (e: any) => {
     if (e.target.matches('[data-link]')) {
@@ -84,10 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
       navigateTo(e.target.href);
     }
   });
-
   router();
 });
 
+// 페이지 이동 함수
+const navigateTo = (url) => {
+  history.pushState(null, null, url);
+  clearInterval(timer);
+  clearInterval(alarmChecker);
+  router();
+};
+
+// 페이지별 모델 분리
 const distributeModel = (pathname) => {
   switch (pathname) {
     case '/':
