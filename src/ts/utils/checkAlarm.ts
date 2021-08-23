@@ -39,7 +39,7 @@ const getCurrentTime = (): number[] => {
 };
 
 // 문자열에서 시간/분 데이터만 추출
-const parseTime = (time: string): number[] => {
+export const parseTime = (time: string): number[] => {
   const tokens = time.split(' ');
   const ampm = tokens[0];
   let hours = cutStringFromTime(tokens[1]);
@@ -49,7 +49,7 @@ const parseTime = (time: string): number[] => {
 };
 
 // 시간문자열에서 "시", "분" 문자 제거
-const cutStringFromTime = (time: string): number => {
+export const cutStringFromTime = (time: string): number => {
   const tempArray = Array.from(time);
   tempArray.pop();
   const result = tempArray.join('');
