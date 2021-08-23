@@ -6,7 +6,6 @@
 body {
   font-size: 16px;
   color: #f0f0f0;
-  padding: 8px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
   background-color: #406acc;
@@ -33,6 +32,7 @@ img {
 header {
   display: flex;
   justify-content: space-between;
+  padding: 0.5em 0em;
 }
 
 .nav__link {
@@ -48,6 +48,8 @@ header {
   text-align: center;
   border: 1px solid #5cbce9;
 }
+
+
 
 
 /* 탈부착용 클래스 */
