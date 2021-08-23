@@ -36,11 +36,6 @@ header {
 }
 
 .nav__link {
-  width: 3em;
-  height: 1.5em;
-}
-
-.nav__link, .new__item {
   display: block;
   color: #5cbce9;
   background-color: #f0f0f0;
