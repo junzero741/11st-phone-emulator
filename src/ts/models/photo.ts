@@ -11,6 +11,7 @@ const photo = () => {
     const img = document.createElement('img');
     img.classList.add('photo__thumbnail');
     img.src = `${imageFile}`;
+    img.alt = `${imageFile}`;
     li.appendChild(img);
     return li;
   };
